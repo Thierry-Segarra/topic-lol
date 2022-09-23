@@ -21,6 +21,11 @@ if(isset($_POST['username']) && isset($_POST['password']))
       $reponse      = mysqli_fetch_array($exec_requete);
       $count = $reponse['count(*)'];
 
+      $requete2 = "SELECT * FROM utilisateur where 
+         nom_utilisateur = '".$username."' and mot_de_passe = '".$pwd_peppered."' ";
+      $exec_requete2 = mysqli_query($db,$requete2);
+      $reponse2      = mysqli_fetch_array($exec_requete2);
+      
       if($count!=0) // nom d'utilisateur et mot de passe correctes
       {   
          $_SESSION['username'] = $username;
