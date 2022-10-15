@@ -32,8 +32,8 @@
                     $dec = $_GET['dec'];
                     if($dec==1){
                         session_start();
-                        $_SESSION['id'] = "";
-                        $_SESSION['username'] = "";
+                        $_SESSION['id_user'] = "";
+                        $_SESSION['pseudo'] = "";
                         $_SESSION = array();
                         
                         session_destroy(); 
