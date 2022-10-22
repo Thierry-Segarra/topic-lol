@@ -37,7 +37,7 @@
                 ?>
                 <p class="Inscriptiontext">Déjà un compte</p>
                 
-                <a class="s" href = "index.php">S'identifier</a>
+                <a class="s" href = "connection.php">S'identifier</a>
                 
             </form>
         </div>

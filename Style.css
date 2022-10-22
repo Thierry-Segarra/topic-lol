@@ -212,6 +212,9 @@ body{
 #scrollUp p{
     color: red;
 }
+#scrollUp .gif{
+    width: 50px;
+}
 
 .text-presentation{
     color: rgb(121, 176, 38);
