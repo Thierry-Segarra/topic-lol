@@ -6,16 +6,26 @@
         <link rel="stylesheet" href="loginstyle.css">
     </head>
     <body>
+    <?php
+        session_start();
+        include('connect.php');
+        $id = $_GET['id'];
+        $id_user = $_SESSION['id_user'];
+
+        $requete = "SELECT * FROM topic where id_topic = ".$id." AND id_user = ".$id_user."";
+        $exec_requete = mysqli_query($db,$requete);
+        $reponse      = mysqli_fetch_array($exec_requete);
+        ?>
         <div id="container">            
-            <form action="add-topic-form.php" method="POST">
-                <h1>Topic</h1>
+            <form action="modifier-topic-form.php" method="POST">
+                <h1>Modification du topic</h1>
                 
-                <label><b>Titre de votre Topic</b></label>
-                <input type="text" placeholder="Entrer le titre" name="titre" maxlength="128" required>
+                <label><b>Modification du Titre de votre Topic</b></label>
+                <input type="text" placeholder="Entrer le titre" name="titre" value='<?php echo $reponse['titre'] ?>' maxlength="128" required>
 
                 <label><b>Topic</b></label>
                 <div class='areatextdiv'>
-                    <textarea class='areatext' id="topic" name="topic"></textarea>
+                    <textarea class='areatext' id="topic" name="topic"> <?php echo $reponse['message'] ?> </textarea>
                 </div>
                 <br>
                 

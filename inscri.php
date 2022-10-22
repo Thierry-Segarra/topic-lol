@@ -15,17 +15,17 @@ if(isset($_POST['username']) && isset($_POST['password'])&& isset($_POST['passwo
     {
         if(strcmp($password,$passwordConf) == 0){
             
-            $requete = "SELECT count(nom_utilisateur) FROM utilisateur where nom_utilisateur = '".$username."'";
+            $requete = "SELECT count(pseudo) FROM user where pseudo = '".$username."'";
             $exec_requete = mysqli_query($db,$requete);
             $reponse      = mysqli_fetch_array($exec_requete);
-            $count = $reponse['count(nom_utilisateur)']; // si 0 = non utiliser si 1 = utiliser
+            $count = $reponse['count(pseudo)']; // si 0 = non utiliser si 1 = utiliser
 
             if($count==0) // !=0 si le nom_utilisateur et deja utiliser | == 0 si le nom_utilisateur n'est pas utiliser
             {   
                 $conf = $username;
                 $pwd_peppered = hash_hmac("md5", $password, $conf); // sha256 mieux que md5 mais c'est pour le test
 
-                $requete = "INSERT INTO `utilisateur`(`nom_utilisateur`, `mot_de_passe`) VALUES ('".$username."','".$pwd_peppered."')"; // id auto-increase
+                $requete = "INSERT INTO `user`(`pseudo`, `mdp`) VALUES ('".$username."','".$pwd_peppered."')"; // id auto-increase
                 $requete = mysqli_query($db,$requete) or die("Foobar");// doit normalement executer la requete SQL
                 if($requete){
                     header('Location: index.php?erreur=3');
