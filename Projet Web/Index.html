@@ -10,7 +10,7 @@
     <!--<div class="cursor"></div> -->
     <img class="fond" src="img/background-LOL.jpg"/>
         <nav class="navbar" id="navbar">
-            <a href="#" class="logo"><img src="img/Salière Logo.png" height="125px" width="150px"></a>
+            <a href="Pages/Accueil.html" class="logo"><img src="img/Salière Logo.png" height="125px" width="150px"></a>
             <div class="nav-links">
                 <ul>
                     <li class="active"><a href="index.html">Fil de discussion</a></li>
@@ -162,12 +162,10 @@ document.addEventListener('click', ()=>{
 window.onscroll = function(ev) {
         if (window.scrollY > 200) {
              document.getElementById("navbar").style.backdropFilter = "blur(3px)";
-             document.getElementById("navbar").style.paddingBottom = "3px";
              document.getElementById("scrollUp").style.right = "10px";
         }
         else{
             document.getElementById("navbar").style.backdropFilter = "blur(0px)";
-            document.getElementById("navbar").style.paddingBottom = "50px";
             document.getElementById("scrollUp").style.right = "-100px";
         }
 };

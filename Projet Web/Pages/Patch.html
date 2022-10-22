@@ -25,41 +25,97 @@
         </div>
 
         <div class="block-patch">
+            <a href="../Index.html">
+                <div class="Patch">
+                    <div class="titre-patch">
+                        <p>PATCH 10.9</p>
+                        <p class="date-patch">Publié le 22/10/2022</p>
+                    </div>
+                </div>
+            </a>
             <div class="Patch">
-                <p>TITRE DU PATCH</p>
+                <div class="titre-patch">
+                    <p>PATCH 10.8</p>
+                    <p class="date-patch">Publié le 22/10/2022</p>
+                </div>
             </div>
             <div class="Patch">
-                <p>TITRE DU PATCH</p>
-            </div>
-            <div class="Patch">
-                <p>TITRE DU PATCH</p>
+                <div class="titre-patch">
+                    <p>PATCH 10.7</p>
+                    <p class="date-patch">Publié le 22/10/2022</p>
+                </div>
             </div>
         </div>
 
         <div class="block-patch">
             <div class="Patch">
-                <p>TITRE DU PATCH</p>
+                <div class="titre-patch">
+                    <p>PATCH 10.6</p>
+                    <p class="date-patch">Publié le 22/10/2022</p>
+                </div>
             </div>
             <div class="Patch">
-                <p>TITRE DU PATCH</p>
+                <div class="titre-patch">
+                    <p>PATCH 10.5</p>
+                    <p class="date-patch">Publié le 22/10/2022</p>
+                </div>
             </div>
             <div class="Patch">
-                <p>TITRE DU PATCH</p>
+                <div class="titre-patch">
+                    <p>PATCH 10.4</p>
+                    <p class="date-patch">Publié le 22/10/2022</p>
+                </div>
             </div>
         </div>
 
         <div class="block-patch">
             <div class="Patch">
-                <p>TITRE DU PATCH</p>
+                <div class="titre-patch">
+                    <p>PATCH 10.3</p>
+                    <p class="date-patch">Publié le 22/10/2022</p>
+                </div>
             </div>
             <div class="Patch">
-                <p>TITRE DU PATCH</p>
+                <div class="titre-patch">
+                    <p>PATCH 10.2</p>
+                    <p class="date-patch">Publié le 22/10/2022</p>
+                </div>
             </div>
             <div class="Patch">
-                <p>TITRE DU PATCH</p>
+                <div class="titre-patch">
+                    <p>PATCH 10.1</p>
+                    <p class="date-patch">Publié le 22/10/2022</p>
+                </div>
             </div>
         </div>
     </div>
     
 </body>
 </html>
+<script>
+    const cursor = document.querySelector('.cursor');
+
+document.addEventListener('mousemove', e => {
+    cursor.setAttribute('style', 'top:'+(e.pageY - 20)+"px; left:"+(e.pageX - 20)+"px;")
+})
+
+document.addEventListener('click', ()=>{
+    cursor.classList.add('expand');
+
+    setTimeout(()=>{
+        cursor.classList.remove("expand");
+    }, 500);
+})
+
+window.onscroll = function(ev) {
+        if (window.scrollY > 200) {
+             document.getElementById("navbar").style.backdropFilter = "blur(3px)";
+             document.getElementById("scrollUp").style.right = "10px";
+        }
+        else{
+            document.getElementById("navbar").style.backdropFilter = "blur(0px)";
+            document.getElementById("scrollUp").style.right = "-100px";
+        }
+};
+
+</script>
