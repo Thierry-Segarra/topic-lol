@@ -124,7 +124,7 @@ body{
     background-color: white;
     padding: 40px;
     margin: auto;
-    width: 40%;
+    width: 60%;
     height: fit-content;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -203,19 +203,27 @@ body{
     position: fixed;
     bottom : 10px;
     right: -100px;
-    background-color: white;
     border-radius: 10px;
     transition: 1s;
     text-decoration: none;
     padding: 10px;
+    background-image: url(img/UP.png);
+    background-color: white;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    border: 3px solid darkred;
 }
 
 #scrollUp p{
-    color: red;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
 }
 
 .text-presentation{
-    color: goldenrod;
+    color: black;
     font-weight: bold;
     font-size: large;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -225,9 +233,11 @@ body{
 
 .presentation{
     height: 300px;
-    width: 100%;
+    width: 80%;
     margin: auto;
     display: flex;
+    background-color: white;
+    border-radius: 10px;
 }
 .button {
     background-color: darkred; /* Green */
@@ -244,6 +254,7 @@ body{
 
 .button:hover{
     background-color: rgb(93, 1, 1);
+    cursor: pointer;
 }
 
 .raccourcis-button{
@@ -305,6 +316,10 @@ body{
     border-bottom: 0.3rem solid darkred;
 }
 
+.form_input:focus{
+    outline: none;
+}
+
 .form_input:hover{
     border-bottom: 0.3rem solid goldenrod;
     transition: all 0.3s;
@@ -312,4 +327,42 @@ body{
 
 .bottom-text{
     padding-top: 20px;
+}
+
+textarea[name=addPoste]{
+    resize: none;
+    overflow: auto;
+}
+
+#sendPoste{
+    margin: 10px;
+}
+
+.form-entete{
+    display: flex;
+}
+
+.entete-img{
+    height: 40px;
+    width: 40px;
+    margin-left: 10px;
+}
+
+.header-profil{
+    display: block;
+    width: 80%;
+    background-color: white;
+    border-radius: 10px;
+    height: 200px;
+    margin: auto;
+    text-align: center;
+    font-size: larger;
+    display: flex;
+}
+
+.title-myPoste{
+    font-size: larger;
+    font-weight: bold;
+    color: darkred;
+    text-align: center;
 }

@@ -14,18 +14,23 @@
             <div class="nav-links">
                 <ul>
                     <li class="active"><a href="index.html">Fil de discussion</a></li>
-                    <li><a href="pages/Patch.html" id="navlinks">Notes de patchs</a></li>
-                    <li><a href="#" id="navlinks">Messages privés</a></li>
                     <li><a href="#" id="navlinks">Support</a></li>
                     <li><a href="pages/Connexion.html" id="navlinks">Connexion</a></li>
+                    <li><a href="pages/Profil.html" id="navlinks">Mon profl (remplacé par nom)</a></li>
                 </ul>
             </div>
         </nav>
     <div class="container-fill">
         <div class="newCom">
-            <label for="newPoste">Ajouter un poste</label>
-            <input id="newPoste" type="area" placeholder="Contenu">
-            <button>Envoyer</button>
+            <form>
+                <div class="form-entete">
+                    <label class="form_label"><b>Ajouter un poste</b></label>
+                    <img class="entete-img" src="img/AddPoste.png">
+                </div>
+                <input type="text" class="form_input" placeholder="Titre du poste...">
+                <textarea id="newPoste" name="addPoste" rows="5" cols="33" class="form_input" placeholder="Contenu du poste..."></textarea>
+                <input type="submit" value="Publier" class="button" id="sendPoste">
+            </form>
         </div>
         <hr>
         <div class="post">
@@ -138,10 +143,10 @@
             <hr>
         </div>
     </div>
-
-    <div id="scrollUp">
-        <a href="#top"><p>Remonter</p></a>
-    </div>
+    <a href="#top">
+        <div id="scrollUp">
+        </div>
+    </a>
 </body>
 </html>
 <script>
