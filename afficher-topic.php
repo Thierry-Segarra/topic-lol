@@ -59,7 +59,7 @@
                 if($row["id_user"] == $_SESSION['id_user'] || $_SESSION['role'] == "admin"){
                     ?>
                     <br><br>
-                    <a href="supp_com.php?id=<?php echo $row["id_commentaire"]  ?>&id_topic=<?php echo $row["id_topic"]  ?>" style="border: solid 1px gray; border-radius:10px; text-decoration:none; padding:3px; background-color:gray;color:black" >Suprimer commentaire</a>
+                    <a href="supp_com.php?id=<?php echo $row["id_commentaire"]  ?>&id_topic=<?php echo $row["id_topic"]  ?>" class="button" >Suprimer commentaire</a>
                 <?php
                 }    
                 }           
