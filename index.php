@@ -21,7 +21,18 @@
     <div class="raccourcis">
         <a href="actualite.php" class="button">Fil d'actualité</a>
         <a href="Patch.php" class="button">Notes de patch</a>
-        <a href="connection.php" class="button">Se connecter / S'inscrire</a>
+        <?php
+        if(!isset($_SESSION['id_user'])){
+            ?>
+            <a href="connection.php" class="button">Se connecter / S'inscrire</a>;
+            <?php
+        }else{
+            ?>
+            <a href="deconnection.php?dec=1" class="button">Se déconnecter</a>
+        <?php
+        }
+        ?>
+        
     </div>
 </body>
 

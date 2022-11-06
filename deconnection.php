@@ -9,7 +9,7 @@
             
             session_destroy(); 
             echo "<p style='color:green'>Vous etez deconnecter</p>";
-            header('Location: actualite.php');
+            header('Location: index.php');
         }
     }
 ?>
