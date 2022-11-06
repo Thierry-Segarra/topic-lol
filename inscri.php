@@ -25,7 +25,7 @@ if(isset($_POST['username']) && isset($_POST['password'])&& isset($_POST['passwo
                 $conf = $username;
                 $pwd_peppered = hash_hmac("md5", $password, $conf); // sha256 mieux que md5 mais c'est pour le test
 
-                $requete = "INSERT INTO `user`(`pseudo`, `mdp`) VALUES ('".$username."','".$pwd_peppered."')"; // id auto-increase
+                $requete = "INSERT INTO `user`(`pseudo`, `mdp`,`date_inscription`) VALUES ('".$username."','".$pwd_peppered."',NOW())"; // id auto-increase
                 $requete = mysqli_query($db,$requete) or die("Foobar");// doit normalement executer la requete SQL
                 if($requete){
                     header('Location: connection.php?erreur=3');
@@ -52,7 +52,7 @@ if(isset($_POST['username']) && isset($_POST['password'])&& isset($_POST['passwo
 }
 else
 {
-   header('Location: inscription.php');
+   //header('Location: inscription.php');
 }
 mysqli_close($db); // fermer la connexion
 ?>

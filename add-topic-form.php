@@ -13,24 +13,24 @@ if(isset($_POST['titre']) && isset($_POST['topic']))
     if($titre !== "" && $topic !== "")
     {
 
-        $requete = "INSERT INTO `topic`(`titre`, `message`,`id_user`) VALUES ('".$titre."','".$topic."','".$_SESSION['id_user']."')"; // id auto-increase
+        $requete = "INSERT INTO `topic`(`titre`, `message`,`id_user`,`date_publication`) VALUES ('".$titre."','".$topic."','".$_SESSION['id_user']."',NOW())"; // id auto-increase
         $requete = mysqli_query($db,$requete) or die("Foobar");// doit normalement executer la requete SQL
         if($requete){
-            header('Location: actualite.php?erreur=2');
+            header('Location: index.php?erreur=2');
         }
         else
         {
-            header('Location: actualite.php?erreur=1');
+            header('Location: index.php?erreur=1');
         }
     }
     else
     {
-       header('Location: actualite.php?erreur=1'); // utilisateur ou mot de passe vide
+       header('Location: index.php?erreur=1'); // utilisateur ou mot de passe vide
     }
 }
 else
 {
-   header('Location: actualite.php');
+   header('Location: index.php');
 }
 mysqli_close($db); // fermer la connexion
 ?>
