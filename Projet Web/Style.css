@@ -1,0 +1,315 @@
+* {
+    margin : 0;
+    padding : 0;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white
+}
+
+.fond{
+    display : block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width : 100%;
+    height : 100%;
+    z-index: -1;
+}
+
+.raccourcis p{
+    color: white;
+    font-weight: bold;
+}
+
+.navbar{
+    display: flex;
+    position: sticky;
+    top: -40px;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center;
+    transition: 0.4s;
+    z-index: 99;
+}
+.navbar a{
+    color: black;
+}
+
+.navbar .logo{
+    font-size: 2em; 
+}
+
+.navbar .nav-links ul {
+    display: flex;
+}
+
+.navbar .nav-links ul li{
+    margin: 0 25px;
+}
+
+.navbar .nav-links ul li.active a{
+    color: crimson;
+    font-weight: 600;
+}
+
+.title-patch{
+    margin: auto;
+    background-color: black;
+    border: solid 1px black;
+    border-top-right-radius: 10px;
+    color: white;
+    font-size: 1.5em;
+    width: 70%;
+    padding: 10px;
+}
+
+.block-patch{
+    display: flex;
+    width: 70%;
+    margin: auto;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+
+.Patch{
+    background-image: url(img/background-ptch.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-color: black;
+    height: 300px;
+    width: 300px;
+    border: solid 1px black;
+    border-radius: 10px;
+    display: flex;
+}
+
+.titre-patch{
+    font-weight: bold;
+    color: white;
+    font-size: large;
+    text-align: center;
+    margin: auto;
+}
+
+.date-patch{
+    font-size: small;
+    font-style: italic;
+}
+
+.Patch:hover{
+    transform:scale(1.10);
+    transition: transform 0.5s;
+    cursor:pointer;
+}
+
+.Patch p{
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.container-patch{
+    background-color: white;
+    margin: auto;
+    padding-top: 30px;
+}
+
+.container-fill{
+    background-color: white;
+    padding: 40px;
+    margin: auto;
+    width: 40%;
+    height: fit-content;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.entete{
+    display: flex;
+}
+
+.message{
+    margin-left: 5%;
+    margin-bottom: 5%;
+}
+
+.post hr{
+    width: 50%;
+    margin: auto;
+}
+
+.post{
+    margin-bottom: 5%;
+}
+
+
+.cursor {
+    width: 40px;
+    height: 40px;
+    border: 2px dashed black;
+    border-radius: 50%;
+    position: absolute;
+    animation: Anim1 1s infinite alternate;
+}
+
+.cursor::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 10px;
+    height: 10px;
+    background: crimson;
+    border-radius: 50%;
+}
+
+.expand {
+    animation: Anim2 .5s;
+    background: crimson;
+    border: 1px solid crimson;
+}
+
+@keyframes Anim1 {
+    from {
+        transform: scale(1) rotate(0deg);
+    }
+    to {
+        transform: scale(0.7) rotate(190deg);
+    }
+}
+
+@keyframes Anim2 {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(2);
+    }
+    100%{
+        transform: scale(1);
+        opacity:0;
+    }
+}
+
+#scrollUp
+{
+    position: fixed;
+    bottom : 10px;
+    right: -100px;
+    background-color: white;
+    border-radius: 10px;
+    transition: 1s;
+    text-decoration: none;
+    padding: 10px;
+}
+
+#scrollUp p{
+    color: red;
+}
+
+.text-presentation{
+    color: goldenrod;
+    font-weight: bold;
+    font-size: large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin:auto;
+    text-align: center;
+}
+
+.presentation{
+    height: 300px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+}
+.button {
+    background-color: darkred; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    box-shadow: 3px 3px 3px black;
+    transition-duration: 0.4s;
+}
+
+.button:hover{
+    background-color: rgb(93, 1, 1);
+}
+
+.raccourcis-button{
+    margin:auto;
+    text-align: center;
+}
+
+#raccourcis{
+    height: 200px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+}
+
+#block{
+    height: 400px;
+    width: 100%;
+    background-color: white;
+}
+
+.titre-raccourcis{
+    color: goldenrod;
+    font-weight: bold;
+    padding-bottom: 30px;
+}
+
+#container-connexion{
+    display: block;
+    height: fit-content;
+    width: fit-content;
+    padding: 80px;
+    background-color: white;
+    backdrop-filter: blur(100px);
+    border-radius: 3px;
+    margin: auto;
+}
+
+.form_label{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    margin-left: 2rem;
+    margin-top: 0.7rem;
+    display: block;
+    transition: all 0.3s;
+    transform: translateY(0rem);
+}
+
+.form_input{
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    font-size: 1.2rem;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+    border-radius: 0.2rem;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    width: 90%;
+    display: block;
+    border-bottom: 0.3rem solid darkred;
+}
+
+.form_input:hover{
+    border-bottom: 0.3rem solid goldenrod;
+    transition: all 0.3s;
+}
+
+.bottom-text{
+    padding-top: 20px;
+}

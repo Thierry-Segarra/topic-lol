@@ -17,7 +17,7 @@
                 <input type="password" placeholder="Entrer le mot de passe" name="password" required>
 
                 <input type="submit" id='submit' value="S'IDENTIFIER" >
-                <?php
+                <!--<?php
                 if(isset($_GET['erreur'])){
                     $err = $_GET['erreur'];
                     if($err==1 || $err==2){
@@ -31,7 +31,7 @@
                 if(isset($_GET['sup'])){
                     echo "<p style='color:red'>Compte Suprimée</p>";
                 }
-                ?>
+                ?>-->
                 <p class="Inscriptiontext">Si vous n'avez pas de Compte</p>
                 <a class="s" href="inscription.php" >Incrivez-vous</a>
                 
