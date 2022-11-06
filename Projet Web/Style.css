@@ -3,6 +3,7 @@
     padding : 0;
     text-decoration: none;
     list-style: none;
+    scroll-behavior: smooth;
 }
 
 body{
@@ -214,7 +215,7 @@ body{
 }
 
 .text-presentation{
-    color: rgb(121, 176, 38);
+    color: goldenrod;
     font-weight: bold;
     font-size: large;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -223,8 +224,6 @@ body{
 }
 
 .presentation{
-    backdrop-filter: blur(15px);
-    box-shadow: 0px 1px 3px rgb(37, 37, 37), 0px -1px 3px rgb(37, 37, 37);
     height: 300px;
     width: 100%;
     margin: auto;
@@ -247,6 +246,26 @@ body{
     background-color: rgb(93, 1, 1);
 }
 
-.raccourcis{
+.raccourcis-button{
+    margin:auto;
     text-align: center;
+}
+
+#raccourcis{
+    height: 200px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+}
+
+#block{
+    height: 400px;
+    width: 100%;
+    background-color: white;
+}
+
+.titre-raccourcis{
+    color: goldenrod;
+    font-weight: bold;
+    padding-bottom: 30px;
 }

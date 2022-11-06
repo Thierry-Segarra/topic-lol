@@ -14,10 +14,10 @@
             <div class="nav-links">
                 <ul>
                     <li class="active"><a href="index.html">Fil de discussion</a></li>
-                    <li><a href="#"><a href="pages/Patch.html">Notes de patchs</a></li>
-                    <li><a href="#">Messages privés</a></li>
-                    <li><a href="#">Support</a></li>
-                    <li><a href="#">Connexion</a></li>
+                    <li><a href="pages/Patch.html" id="navlinks">Notes de patchs</a></li>
+                    <li><a href="#" id="navlinks">Messages privés</a></li>
+                    <li><a href="#" id="navlinks">Support</a></li>
+                    <li><a href="#" id="navlinks">Connexion</a></li>
                 </ul>
             </div>
         </nav>
@@ -145,28 +145,27 @@
 </body>
 </html>
 <script>
-    const cursor = document.querySelector('.cursor');
-
-document.addEventListener('mousemove', e => {
-    cursor.setAttribute('style', 'top:'+(e.pageY - 20)+"px; left:"+(e.pageX - 20)+"px;")
-})
-
-document.addEventListener('click', ()=>{
-    cursor.classList.add('expand');
-
-    setTimeout(()=>{
-        cursor.classList.remove("expand");
-    }, 500);
-})
 
 window.onscroll = function(ev) {
-        if (window.scrollY > 200) {
-             document.getElementById("navbar").style.backdropFilter = "blur(3px)";
-             document.getElementById("scrollUp").style.right = "10px";
+        if (window.scrollY > 100) {
+            document.getElementById("navbar").style.background = "black";
+            document.getElementById("scrollUp").style.right = "10px";
+            
+            var li = document.querySelectorAll(".nav-links li #navlinks");
+
+            for(var i = 0; li[i]; i++){       
+            li[i].style.color = "white";
+            }
+
         }
         else{
-            document.getElementById("navbar").style.backdropFilter = "blur(0px)";
+            document.getElementById("navbar").style.background = "none";
             document.getElementById("scrollUp").style.right = "-100px";
+            var li = document.querySelectorAll(".nav-links li #navlinks");
+
+            for(var i = 0; li[i]; i++){       
+            li[i].style.color = "black";
+            }
         }
 };
 
