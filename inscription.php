@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="Style.css">
+    <?php include('head.php') ?>
     <title>Accueil</title>
 </head>
 
@@ -12,7 +11,7 @@
     <?php include("header.php");?>
     <br>
     <div id="container-connexion">            
-        <form action="inscri.php" method="POST">
+        <form action="Fonction-php&JS/inscri.php" method="POST">
             <h1>Inscrivez-vous</h1>
             <br>
             <label class="form_label"><b>Nom d'utilisateur</b></label>
@@ -39,7 +38,7 @@
                 echo "<p style='color:red'>Compte Suprimée</p>";
             }
             ?>
-            <p class="bottom-text">Déjà un compte ? <a class="inscription-href" href="connection.php">Connectez-vous</a></p>
+            <p class="bottom-text">Déjà un compte ? <a class="inscription-href" href="Fonction-php&JS/connection.php">Connectez-vous</a></p>
             
             
         </form>
@@ -48,3 +47,4 @@
 </body>
 
 </html>
+<?php include('Fonction-php&JS/scroll.php') ?>

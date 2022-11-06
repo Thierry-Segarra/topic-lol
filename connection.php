@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="Style.css">
+    <?php include('head.php') ?>
     <title>Accueil</title>
 </head>
 
@@ -12,7 +11,7 @@
     <?php include("header.php");?>
     <br>
     <div id="container-connexion">            
-        <form action="verif.php" method="POST">
+        <form action="Fonction-php&JS/verif.php" method="POST">
             <h1>Connectez-vous</h1>
             <br>
             <label class="form_label"><b>Nom d'utilisateur</b></label>
@@ -46,3 +45,4 @@
 </body>
 
 </html>
+<?php include('Fonction-php&JS/scroll.php') ?>

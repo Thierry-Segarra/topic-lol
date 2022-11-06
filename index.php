@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="Style.css">
+    <?php include('head.php') ?>
     <title>Accueil</title>
 </head>
 
@@ -13,7 +12,7 @@
     <div class="container-fill">
         <?php if(isset($_SESSION['id_user'])){ ?>
         <div class="newCom">
-        <form action="add-topic-form.php" method="POST">
+        <form action="Fonction-php&JS/add-topic-form.php" method="POST">
             <div class="form-entete">
                     <label class="form_label"><b>Ajouter un poste</b></label>
                     <img class="entete-img" src="img/AddPoste.png">
@@ -38,7 +37,7 @@
         <?php } ?>
         <hr><br>
         <?php
-        include('connect.php');
+        include('Fonction-php&JS/connect.php');
 
         $requete = "SELECT count(*) from topic";
         $exec_requete = mysqli_query($db, $requete);
@@ -60,7 +59,7 @@
             <div class="post">
                 <div class="entete">
                     
-                    <img src="img/Salière Logo.png" height="25px" width="35px">
+                    <img src="img/Salière-Logo.png" height="25px" width="35px">
                     <?php echo "<h3><a href='afficher-topic.php?id=" . $row["id_topic"] . "'>" . $row["titre"] ." @". $reponse3["pseudo"]." - publier le : ". $row["date"]." </a></h3>";?>
                 </div>
                 <div class="message">
@@ -69,7 +68,7 @@
                 <?php
                 if(isset($_SESSION['role'])){
                     if($_SESSION['role'] == "admin"){
-                        echo "<a href='suprimer_topic.php?id=" . $row["id_topic"] . "' class='button'>suprimer topic</a>";
+                        echo "<a href='Fonction-php&JS/suprimer_topic.php?id=" . $row["id_topic"] . "' class='button'>suprimer topic</a>";
                     }
                 }
                 ?>
@@ -90,4 +89,4 @@
 </body>
 </html>
 
-<?php include('scroll.php') ?>
+<?php include('Fonction-php&JS/scroll.php') ?>

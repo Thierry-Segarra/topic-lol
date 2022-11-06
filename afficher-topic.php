@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="Style.css">
+    <?php include('head.php') ?>
     <title>Accueil</title>
 </head>
 
@@ -14,7 +13,7 @@
         
         <div class="newCom">
         <?php
-            include('connect.php');
+            include('Fonction-php&JS/connect.php');
             $requete3 = "SELECT `message` from topic where id_topic =".$_GET["id"];
             $exec_requete3 = mysqli_query($db, $requete3);
             $reponse3 = mysqli_fetch_array($exec_requete3);
@@ -48,7 +47,7 @@
             <div class="post">
                 <div class="entete">
                 
-                    <img src="img/Salière Logo.png" height="25px" width="35px">
+                    <img src="img/Salière-Logo.png" height="25px" width="35px">
                     <?php echo "<p>" . $row["pseudo_user"]." - publier le : " . $row["date"]."</p>";?>
                 </div>
                 <div class="message">
@@ -59,7 +58,7 @@
                 if($row["id_user"] == $_SESSION['id_user'] || $_SESSION['role'] == "admin"){
                     ?>
                     <br><br>
-                    <a href="supp_com.php?id=<?php echo $row["id_commentaire"]  ?>&id_topic=<?php echo $row["id_topic"]  ?>" class="button" >Suprimer commentaire</a>
+                    <a href="Fonction-php&JS/supp_com.php?id=<?php echo $row["id_commentaire"]  ?>&id_topic=<?php echo $row["id_topic"]  ?>" class="button" >Suprimer commentaire</a>
                 <?php
                 }    
                 }           
@@ -80,4 +79,4 @@
     </a>
 </body>
 </html>
-<?php include('scroll.php') ?>
+<?php include('Fonction-php&JS/scroll.php') ?>

@@ -1,7 +1,6 @@
 <script>
-    window.onscroll = function(ev) {
-        
-        if (window.scrollY > 100) {
+window.onscroll = function(ev) {
+        if (window.scrollY > 100 && window.screen.availWidth > 900){
             document.getElementById("navbar").style.background = "black";
             document.getElementById("scrollUp").style.right = "10px";
             
@@ -21,5 +20,16 @@
             li[i].style.color = "black";
             }
         }
-    };
+
+        if (window.scrollY > 100 && window.screen.availWidth < 900){
+            document.getElementById("scrollUp").style.right = "10px";
+        }
+};
+
+const menuHamburger = document.querySelector(".menu-hamburger")
+        const navLinks = document.querySelector(".nav-links")
+ 
+        menuHamburger.addEventListener('click',()=>{
+        navLinks.classList.toggle('mobile-menu')
+        })
 </script>

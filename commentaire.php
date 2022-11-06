@@ -1,4 +1,4 @@
-<form method="POST" action='envoie_com.php'>
+<form method="POST" action='Fonction-php&JS/envoie_com.php'>
     <label class="form_label">Commentaire :</label><br>
     <textarea name="valide_com"cols="30" rows="10" class="form_input"></textarea>
     <br>

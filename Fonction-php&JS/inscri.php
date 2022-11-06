@@ -28,31 +28,31 @@ if(isset($_POST['username']) && isset($_POST['password'])&& isset($_POST['passwo
                 $requete = "INSERT INTO `user`(`pseudo`, `mdp`,`date_inscription`) VALUES ('".$username."','".$pwd_peppered."',NOW())"; // id auto-increase
                 $requete = mysqli_query($db,$requete) or die("Foobar");// doit normalement executer la requete SQL
                 if($requete){
-                    header('Location: connection.php?erreur=3');
+                    header('Location: ../connection.php?erreur=3');
                 }
                 else
                 {
-                    header('Location: inscription.php?erreur=3');
+                    header('Location: ../inscription.php?erreur=3');
                 }
             }
             else
             {
-                header('Location: inscription.php?erreur=1');// nom d'utilisateur et deja inscrit
+                header('Location: ../inscription.php?erreur=1');// nom d'utilisateur et deja inscrit
             }
         }
         else
         {
-            header('Location: inscription.php?erreur=2'); // mot de passe incorrencte
+            header('Location: ../inscription.php?erreur=2'); // mot de passe incorrencte
         }
     }
     else
     {
-       header('Location: inscription.php?erreur=2'); // utilisateur ou mot de passe vide
+       header('Location: ../inscription.php?erreur=2'); // utilisateur ou mot de passe vide
     }
 }
 else
 {
-   //header('Location: inscription.php');
+   header('Location: ../inscription.php');
 }
 mysqli_close($db); // fermer la connexion
 ?>

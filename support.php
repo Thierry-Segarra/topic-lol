@@ -3,8 +3,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="Style.css">
+    <?php include('head.php') ?>
     <title>Accueil</title>
 </head>
 
@@ -22,13 +21,13 @@
         </thead>
         <tbody>
         <?php
-            include('connect.php');
+            include('Fonction-php&JS/connect.php');
             if($_SESSION['role'] == "admin"){
                 $requete= "select id_user,pseudo from user";
                 $exec_requete = mysqli_query($db,$requete);
 
                 while($row = mysqli_fetch_assoc($exec_requete)){
-                    echo '<tr><td>'.$row['pseudo'].'</td><td><a href="bannir.php?id='.$row['id_user'].'">Bannir</a></td></tr>';
+                    echo '<tr><td>'.$row['pseudo'].'</td><td><a href="Fonction-php&JS/bannir.php?id='.$row['id_user'].'">Bannir</a></td></tr>';
                 };
             };
 
@@ -46,4 +45,4 @@
 
 </html>
 
-<?php include('scroll.php') ?>
+<?php include('Fonction-php&JS/scroll.php') ?>
