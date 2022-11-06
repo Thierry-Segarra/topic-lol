@@ -366,3 +366,26 @@ textarea[name=addPoste]{
     color: darkred;
     text-align: center;
 }
+
+table{
+    width: 100%;
+}
+
+td {
+    width: 50%;
+    border: none;
+    padding: 20px;
+}
+
+tr:nth-child(even) td{ 
+    background-color: #C0C0C0; 
+}
+
+thead{
+    background-color: darkred;
+    color: white;
+}
+
+thead tr th{
+    padding: 20px;
+}
