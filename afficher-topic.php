@@ -11,6 +11,7 @@
     <img class="fond" src="img/background-LOL.jpg"/>
         <?php include("header.php");?>
     <div class="container-fill">
+        
         <div class="newCom">
         <?php
             include('connect.php');
@@ -42,22 +43,23 @@
                 
                 
                 
-            
+                <br>
+                <br>
             <div class="post">
                 <div class="entete">
                 
                     <img src="img/Salière Logo.png" height="25px" width="35px">
-                    <?php echo "<p>" . $row["pseudo_user"]."</p>";?>
+                    <?php echo "<p>" . $row["pseudo_user"]." - publier le : " . $row["date"]."</p>";?>
                 </div>
                 <div class="message">
                 <?php echo $row["contenue"]; ?>
                 <br><br>
                 <?php
                 if(isset($_SESSION['id_user'])){
-                if($row["id_user"] == $_SESSION['id_user']){
+                if($row["id_user"] == $_SESSION['id_user'] || $_SESSION['role'] == "admin"){
                     ?>
                     <br><br>
-                    <a href="supp_com.php?id=<?php echo $row["id_commentaire"]  ?>&id_topic=<?php echo $row["id_topic"]  ?>" style="border: solid 1px gray; border-radius:10px; text-decoration:none; padding:3px; background-color:gray;color:black" >Suprimer commentaire</a>
+                    <a href="supp_com.php?id=<?php echo $row["id_commentaire"]  ?>&id_topic=<?php echo $row["id_topic"]  ?>" class="button" >Suprimer commentaire</a>
                 <?php
                 }    
                 }           
@@ -71,26 +73,11 @@
             };
         ?>
         
-    </div>
-
-    <div id="scrollUp">
-        <a href="#top"><p>Remonter</p></a>
-    </div>
+        </div>
+    <a href="#top">
+        <div id="scrollUp">
+        </div>
+    </a>
 </body>
 </html>
-<script>
-
-window.onscroll = function(ev) {
-        if (window.scrollY > 200) {
-             document.getElementById("navbar").style.backdropFilter = "blur(3px)";
-             document.getElementById("navbar").style.paddingBottom = "3px";
-             document.getElementById("scrollUp").style.right = "10px";
-        }
-        else{
-            document.getElementById("navbar").style.backdropFilter = "blur(0px)";
-            document.getElementById("navbar").style.paddingBottom = "50px";
-            document.getElementById("scrollUp").style.right = "-100px";
-        }
-};
-
-</script>
+<?php include('scroll.php') ?>

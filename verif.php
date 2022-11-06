@@ -21,7 +21,7 @@ if(isset($_POST['username']) && isset($_POST['password']))
       $reponse      = mysqli_fetch_array($exec_requete);
       $count = $reponse['count(*)'];
 
-      $requete2 = "SELECT id_user FROM user where 
+      $requete2 = "SELECT id_user,role,date_inscription FROM user where 
       pseudo = '".$username."' and mdp = '".$pwd_peppered."' ";
       $exec_requete2 = mysqli_query($db,$requete2);
       $reponse2      = mysqli_fetch_array($exec_requete2);
@@ -30,6 +30,8 @@ if(isset($_POST['username']) && isset($_POST['password']))
       {   
          $_SESSION['pseudo'] = $username;
          $_SESSION['id_user'] = $reponse2['id_user'];
+         $_SESSION['role'] = $reponse2['role'];
+         $_SESSION['date'] = $reponse2['date_inscription'];
           header('Location: index.php');
       }
       else
