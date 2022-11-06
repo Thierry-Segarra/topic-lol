@@ -28,7 +28,7 @@ if(isset($_POST['username']) && isset($_POST['password'])&& isset($_POST['passwo
                 $requete = "INSERT INTO `user`(`pseudo`, `mdp`) VALUES ('".$username."','".$pwd_peppered."')"; // id auto-increase
                 $requete = mysqli_query($db,$requete) or die("Foobar");// doit normalement executer la requete SQL
                 if($requete){
-                    header('Location: index.php?erreur=3');
+                    header('Location: connection.php?erreur=3');
                 }
                 else
                 {

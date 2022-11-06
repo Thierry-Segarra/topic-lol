@@ -24,7 +24,7 @@ if(isset($_POST['titre']) && isset($_POST['topic']))
             $requete = "INSERT INTO `topic`(`titre`, `message`) VALUES ('".$titre."','".$topic."')"; // id auto-increase
             $requete = mysqli_query($db,$requete) or die("Foobar");// doit normalement executer la requete SQL
             if($requete){
-                header('Location: index.php?erreur=3');
+                header('Location: actualite.php?erreur=3');
             }
             else
             {

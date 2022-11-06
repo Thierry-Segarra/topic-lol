@@ -21,7 +21,7 @@ if(isset($_POST['username']) && isset($_POST['password']))
       $reponse      = mysqli_fetch_array($exec_requete);
       $count = $reponse['count(*)'];
 
-      $requete2 = "SELECT * FROM user where 
+      $requete2 = "SELECT id_user FROM user where 
       pseudo = '".$username."' and mdp = '".$pwd_peppered."' ";
       $exec_requete2 = mysqli_query($db,$requete2);
       $reponse2      = mysqli_fetch_array($exec_requete2);
@@ -30,23 +30,23 @@ if(isset($_POST['username']) && isset($_POST['password']))
       {   
          $_SESSION['pseudo'] = $username;
          $_SESSION['id_user'] = $reponse2['id_user'];
-          header('Location: acceuil.php');
+          header('Location: index.php');
       }
       else
       {
-         header('Location: index.php?erreur=1'); // utilisateur ou mot de passe incorrect
+         header('Location: connection.php?erreur=1'); // utilisateur ou mot de passe incorrect
       }
 
       
     }
     else
     {
-       header('Location: index.php?erreur=2'); // utilisateur ou mot de passe vide
+       header('Location: connection.php?erreur=2'); // utilisateur ou mot de passe vide
     }
 }
 else
 {
-   header('Location: index.php');
+   header('Location: connection.php');
 }
 mysqli_close($db); // fermer la connexion
 ?>

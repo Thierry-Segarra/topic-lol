@@ -12,38 +12,25 @@ if(isset($_POST['titre']) && isset($_POST['topic']))
     
     if($titre !== "" && $topic !== "")
     {
-            
-        $requete = "SELECT count(titre) FROM topic where titre = '".$topic."'";
-        $exec_requete = mysqli_query($db,$requete);
-        $reponse      = mysqli_fetch_array($exec_requete);
-        $count = $reponse['count(titre)']; // si 0 = non utiliser si 1 = utiliser
 
-        if($count==0) // !=0 si le nom_utilisateur et deja utiliser | == 0 si le nom_utilisateur n'est pas utiliser
-        {   
-
-            $requete = "INSERT INTO `topic`(`titre`, `message`) VALUES ('".$titre."','".$topic."')"; // id auto-increase
-            $requete = mysqli_query($db,$requete) or die("Foobar");// doit normalement executer la requete SQL
-            if($requete){
-                header('Location: index.php?erreur=3');
-            }
-            else
-            {
-                header('Location: inscription.php?erreur=3');
-            }
+        $requete = "INSERT INTO `topic`(`titre`, `message`,`id_user`) VALUES ('".$titre."','".$topic."','".$_SESSION['id_user']."')"; // id auto-increase
+        $requete = mysqli_query($db,$requete) or die("Foobar");// doit normalement executer la requete SQL
+        if($requete){
+            header('Location: actualite.php?erreur=2');
         }
         else
         {
-            header('Location: inscription.php?erreur=1');// nom d'utilisateur et deja inscrit
+            header('Location: actualite.php?erreur=1');
         }
     }
     else
     {
-       header('Location: inscription.php?erreur=2'); // utilisateur ou mot de passe vide
+       header('Location: actualite.php?erreur=1'); // utilisateur ou mot de passe vide
     }
 }
 else
 {
-   header('Location: inscription.php');
+   header('Location: actualite.php');
 }
 mysqli_close($db); // fermer la connexion
 ?>
