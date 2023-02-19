@@ -46,4 +46,4 @@
 </body>
 
 </html>
-<?php include('Fonction-php&JS/scroll.php') ?>
+<?php //include('Fonction-php&JS/scroll.php') ?>

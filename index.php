@@ -86,7 +86,8 @@
         <div id="scrollUp">
         </div>
     </a>
+    <footer><?php include('footer.php') ?></footer>
 </body>
 </html>
 
-<?php include('Fonction-php&JS/scroll.php') ?>
+<?php //include('Fonction-php&JS/scroll.php') ?>

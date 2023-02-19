@@ -29,22 +29,27 @@ body{
 .navbar{
     display: flex;
     position: sticky;
-    top: -40px;
-    justify-content: space-between;
+    top: 0px;
     width: 100%;
     box-sizing: border-box;
     align-items: center;
     transition: 0.4s;
     z-index: 99;
+    background-color: #111;
 }
 .navbar a{
-    color: black;
+    color: white;
 }
 
 .navbar .logo{
     font-size: 2em; 
 }
 
+.navbar .nav-links {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
 .navbar .nav-links ul {
     display: flex;
 }
@@ -128,6 +133,8 @@ body{
     height: fit-content;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    margin-bottom: 30px;
+    margin-top: 30px;
 }
 
 .entete{
@@ -294,6 +301,8 @@ body{
     backdrop-filter: blur(100px);
     border-radius: 3px;
     margin: auto;
+    margin-bottom: 30px;
+    margin-top: 30px;
 }
 
 .form_label{
