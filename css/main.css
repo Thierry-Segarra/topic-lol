@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.bandeau-accueil {
+    background: url(../img/bandeau_gif.gif);
+    background-size: cover;
+    height: 500px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bandeau-footer {
+    background: url(../img/rejoins-nous.jpg);
+    background-size: cover;
+    height: 300px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-bandeau-footer {
+    color: white;
+    background-color: #CCA756;
+    height: fit-content;
+    width: fit-content;
+    padding: 40px;
+    position: relative;
+    z-index: 1;
+    font-size: 1.5rem;
+}
+
+.container-bandeau-footer:hover {
+    background-color: #f3c666;
+}
+
+.bandeau-footer a {
+    text-decoration: none;
+}
+
+/*.bandeau-accueil::after{
+    backdrop-filter: blur(5px); 
+  
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%; height: 100%;
+    top: 0;
+}*/
+
+.container-bandeau {
+    color: black;
+    background-color: white;
+    height: fit-content;
+    width: fit-content;
+    padding: 150px;
+    position: relative;
+    z-index: 1;
+}
+
+/*.container-bandeau::after {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+    background: red;
+    z-index: -1;
+  }*/
+
+.container-bandeau p {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.container-bandeau img {
+    margin: auto;
+}
+
+.presentation-accueil {
+    display: block;
+    height: 500px;
+    padding: 15px;
+    background-color: #1E1E1E;
+}
+
+.title-decoration {
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    background-color: black;
+    display: block;
+    width: 10px;
+    height: 10px;
+}
+
+.row {
+    display: flex;
+    width: 100%;
+}
+
+
+.presentation-accueil p {
+    font-size: 1.5rem;
+}
+
+
+.titre-accueil {
+    padding: 20px;
+    padding-right: 30px;
+    padding-left: 30px;
+    display: block;
+    width: fit-content;
+    margin: auto;
+    background-color: rgb(162, 0, 0);
+    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+    color: white;
+}
+
+.block-question {
+    height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding-top: 30px;
+}
+
+.content-question {
+    padding: 5px;
+}
+
+.question {
+    display: block;
+    /*border: solid 1px black;*/
+    padding: 5px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: white;
+}
+
+.presentation-accueil h2 {
+    padding-bottom: 15px;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.w-30 {
+    width: 30%;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:900");
+
+a {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    color: black;
+    text-decoration: none;
+}
+
+.h-button {
+    background: #CCA756;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    color: white;
+}
+
+.h-button span {
+    display: inline-block;
+    min-width: 0.3em;
+    text-transform: uppercase;
+    transition: 0.25s cubic-bezier(0.5, -1, 0.5, 2);
+    opacity: 0;
+    transform: translate(0, -20px);
+}
+
+.h-button:before {
+    content: attr(data-text);
+    position: absolute;
+    width: 100%;
+    left: 0;
+    transition: 0.25s cubic-bezier(0.5, -1, 0.5, 2);
+    text-transform: uppercase;
+    letter-spacing: 3.5px;
+    opacity: 1;
+    transform: translate(0, 0px);
+}
+
+.h-button:hover:before,
+.h-button:focus:before {
+    opacity: 0;
+    transform: translate(0, 20px);
+}
+
+.h-button:hover span,
+.h-button:focus span {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.h-button:hover span:nth-child(1),
+.h-button:focus span:nth-child(1) {
+    transition-delay: 0.025s;
+}
+
+.h-button:hover span:nth-child(2),
+.h-button:focus span:nth-child(2) {
+    transition-delay: 0.05s;
+}
+
+.h-button:hover span:nth-child(3),
+.h-button:focus span:nth-child(3) {
+    transition-delay: 0.075s;
+}
+
+.h-button:hover span:nth-child(4),
+.h-button:focus span:nth-child(4) {
+    transition-delay: 0.1s;
+}
+
+.h-button:hover span:nth-child(5),
+.h-button:focus span:nth-child(5) {
+    transition-delay: 0.125s;
+}
+
+.h-button:hover span:nth-child(6),
+.h-button:focus span:nth-child(6) {
+    transition-delay: 0.15s;
+}
+
+.h-button:hover span:nth-child(7),
+.h-button:focus span:nth-child(7) {
+    transition-delay: 0.15s;
+}
+
+.h-button:hover span:nth-child(8),
+.h-button:focus span:nth-child(8) {
+    transition-delay: 0.15s;
+}
+
+.h-button:hover span:nth-child(9),
+.h-button:focus span:nth-child(9) {
+    transition-delay: 0.15s;
+}
+
+.h-button:hover span:nth-child(10),
+.h-button:focus span:nth-child(10) {
+    transition-delay: 0.15s;
+}

@@ -16,21 +16,21 @@ if(isset($_POST['titre']) && isset($_POST['topic']))
         $requete = "INSERT INTO `topic`(`titre`, `message`,`id_user`,`date_publication`) VALUES ('".$titre."','".$topic."','".$_SESSION['id_user']."',NOW())"; // id auto-increase
         $requete = mysqli_query($db,$requete) or die("Foobar");// doit normalement executer la requete SQL
         if($requete){
-            header('Location: ../index.php?erreur=2');
+            header('Location: ../discussion.php?erreur=2');
         }
         else
         {
-            header('Location: ../index.php?erreur=1');
+            header('Location: ../discussion.php?erreur=1');
         }
     }
     else
     {
-       header('Location: ../index.php?erreur=1'); // utilisateur ou mot de passe vide
+       header('Location: ../discussion.php?erreur=1'); // utilisateur ou mot de passe vide
     }
 }
 else
 {
-   header('Location: ../index.php');
+   header('Location: ../discussion.php');
 }
 mysqli_close($db); // fermer la connexion
 ?>

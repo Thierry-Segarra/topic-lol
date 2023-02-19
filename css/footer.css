@@ -27,6 +27,7 @@ footer {
 .ligne {
     display: flex;
     justify-content: center;
+    list-style-type: none;
 }
 
 .ligne li {
@@ -70,6 +71,7 @@ footer {
 }
 
 .bouton-legal ul {
+    
     display: flex;
     justify-content: center;
     flex-wrap: wrap;

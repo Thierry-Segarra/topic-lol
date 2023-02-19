@@ -1,0 +1,194 @@
+/*  PARTIE FIL DE DISCUSSION */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.fond {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+body {
+    color: white;
+}
+
+.container-discussion {
+    background-color: #1E1E1E;
+    opacity: 95%;
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    padding: 15px;
+}
+
+.container-discussion h1 {
+    padding-left: 10px;
+}
+
+.poste {
+    padding: 15px;
+    border-top: #333 solid 1px;
+    border-bottom: #333 solid 1px;
+}
+
+.area-publication {
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    font-size: 1.2rem;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+    border-radius: 0.2rem;
+    background-color: transparent;
+    border: none;
+    width: 85%;
+    display: block;
+    border-bottom: 1px solid;
+    border-bottom-color: #333;
+    caret-color: white;
+}
+
+.area-publication:focus {
+    outline: none;
+}
+
+.button {
+    padding: 15px;
+    background-color: #CCA756;
+    color: white;
+    border: none;
+    padding-right: 30px;
+    padding-left: 30px;
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: #f3c666;
+    cursor: pointer;
+}
+
+#sendPoste {
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    margin-left: auto;
+    margin-right: 15px;
+    margin-top: 15px;
+}
+
+.container-publication {
+    border-top: solid 1px;
+    border-bottom: solid 1px;
+    padding: 15px;
+}
+
+.consult-poste {
+    text-decoration: none;
+    color: white;
+}
+
+.poste:hover {
+    background-color: #242424;
+    transition: background-color 0.3s linear;
+    cursor: pointer;
+}
+
+.footer-poste {
+    padding-top: 5px;
+    display: flex;
+}
+
+.margin-bot-10 {
+    margin-bottom: 10px;
+}
+
+.nb-message {
+    padding-left: 5px;
+    margin-top: 3px;
+}
+
+
+/* The sidebar menu */
+.sidenav {
+    height: 100%;
+    /* Full-height: remove this if you want "auto" height */
+    width: 19%;
+    /* Set the width of the sidebar */
+    position: fixed;
+    /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1;
+    /* Stay on top */
+    top: 0;
+    /* Stay at the top */
+    left: 0;
+    background-color: #1E1E1E;
+    /* Black */
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    padding-top: 20px;
+    border-right: solid 1px rgb(162, 0, 0);
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    border-bottom: 2px solid #1E1E1E;
+    width: fit-content;
+}
+
+.Logo-side{
+    display: block;
+    margin: auto;
+    width: fit-content;
+}
+
+.link-nav{
+    display: block;
+    width: fit-content;
+    margin: auto;
+    text-align: left;
+    padding-top: 15px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+.nav-links {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.nav-links::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: rgb(162, 0, 0);
+    transition: width .3s;
+}
+
+.nav-links:hover::after {
+    width: 100%;
+}
+
+.nav-links:hover{
+    color: #f1f1f1;
+}

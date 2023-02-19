@@ -41,9 +41,7 @@
             
         </form>
     </div>
-
-    <footer><?php include('footer.php') ?></footer>
+    <footer><?php include('footer.php'); ?></footer>
 </body>
 
 </html>
-<?php //include('Fonction-php&JS/scroll.php') ?>

@@ -1,93 +1,75 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
+
 <head>
-    <?php include('head.php') ?>
-    <title>Accueil</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/Style.css">
+    <title>League Dump</title>
 </head>
 
 <body>
-    <!--<div class="cursor"></div> -->
-    <img class="fond" src="img/background-LOL.jpg"/>
-        <?php include("header.php");?>
-    <div class="container-fill">
-        <?php if(isset($_SESSION['id_user'])){ ?>
-        <div class="newCom">
-        <form action="Fonction-php&JS/add-topic-form.php" method="POST">
-            <div class="form-entete">
-                    <label class="form_label"><b>Ajouter un poste</b></label>
-                    <img class="entete-img" src="img/AddPoste.png">
-                </div>
-                <input type="text" class="form_input" name="titre" placeholder="Titre du poste...">
-                <textarea id="newPoste"  rows="5" cols="33" class="form_input" name="topic" placeholder="Contenu du poste..."></textarea>
-                <input type="submit" value="Publier" class="button" id="sendPoste">
-            
-        </form>
-        <?php
-                if(isset($_GET['erreur'])){
-                    $err = $_GET['erreur'];
-                    if($err==1){
-                        echo "<p style='color:red'>Echec de l'envoi du Topic</p>";
-                    }
-                    if($err==2){
-                        echo "<p style='color:green'>Topic Poster</p>";
-                    }
-                }
-                ?> 
+    <?php include('header.php'); ?>
+    <div class="bandeau-accueil">
+        <div class="container-bandeau">
+            <p>Bienvenue sur League Dump !</p>
         </div>
-        <?php } ?>
-        <hr><br>
-        <?php
-        include('Fonction-php&JS/connect.php');
-
-        $requete = "SELECT count(*) from topic";
-        $exec_requete = mysqli_query($db, $requete);
-        $reponse = mysqli_fetch_array($exec_requete);
-        $count = $reponse['count(*)'];
-
-        if($count!=0){
-
-                $requete2='Select id_topic, titre, message,DATE_FORMAT(date_publication, "%d/%m/%Y") AS date, id_user,DATE_FORMAT(TIMEDIFF( NOW(), date_publication ), "%H:%i")AS Time from topic Order By date_publication DESC';
-                $exec_requete2 = mysqli_query($db,$requete2);
-
-            while($row = mysqli_fetch_assoc($exec_requete2)){
-
-                $requete3 = "SELECT pseudo from user where id_user =".$row["id_user"];
-                $exec_requete3 = mysqli_query($db, $requete3);
-                $reponse3 = mysqli_fetch_array($exec_requete3);
-
-            ?>
-            <div class="post">
-                <div class="entete">
-                    
-                    <img src="img/Salière-Logo.png" height="25px" width="35px">
-                    <?php echo "<h3><a href='afficher-topic.php?id=" . $row["id_topic"] . "'>" . $row["titre"] ." @". $reponse3["pseudo"]." - publier le : ". $row["date"]." </a></h3>";?>
-                </div>
-                <div class="message">
-                <?php echo $row["message"]; ?>
-                </div>
-                <?php
-                if(isset($_SESSION['role'])){
-                    if($_SESSION['role'] == "admin"){
-                        echo "<a href='Fonction-php&JS/suprimer_topic.php?id=" . $row["id_topic"] . "' class='button'>suprimer topic</a>";
-                    }
-                }
-                ?>
-                <hr>
-            </div>
-            <?php
-                
-            };
-
-        };
-        ?>
-        
     </div>
-    <a href="#top">
-        <div id="scrollUp">
-        </div>
-    </a>
-    <footer><?php include('footer.php') ?></footer>
-</body>
-</html>
 
-<?php //include('Fonction-php&JS/scroll.php') ?>
+    <div class="presentation-accueil">
+        <div class="titre-accueil">
+            <h1>Présentation</h1>
+        </div>
+        <div class="block-question">
+            <div class="question">
+                <div class="titre-question">
+                    <h2>Qu'est-ce que League Dump ?</h2>
+                </div>
+                <div class="content-question">
+                    <p> League Dump est un espace de discussion centré sur l'univers de League of Legend.</p>
+                    <br>
+                    <p><b>Notre objectif ?</b> Vous laissez parler de votre jeu favoris sans aucune censure de la part
+                        de Riot Games</p>
+                </div>
+            </div>
+            <div class="question">
+                <div class="titre-question">
+                    <h2>Mais qui est derrière tous ça ?</h2>
+                </div>
+                <div class="content-question">
+                    <p>Thierry : Développeur back-end/integrateur </p>
+                    <p>Erwan : Développeur full stack </p>
+                    <p>Florian : Développeur front-end </p>
+                </div>
+            </div>
+            <div class="question">
+                <div class="titre-question">
+                    <h2>Pourquoi ce projet ?</h2>
+                </div>
+                <div class="content-question">
+                    <p> Aucune idée, on trouve ça drôle.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bandeau-footer">
+        <a aria-label='Inscription' class='h-button' data-text='Rejoins nous !' href='inscription.php'>
+            <span>I</span>
+            <span>n</span>
+            <span>s</span>
+            <span>c</span>
+            <span>r</span>
+            <span>i</span>
+            <span>t</span>
+            <span>i</span>
+            <span>o</span>
+            <span>n</span>
+        </a>
+    </div>
+    <footer><?php include('footer.php'); ?></footer>
+</body>
+
+</html>

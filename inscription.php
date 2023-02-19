@@ -38,13 +38,12 @@
                 echo "<p style='color:red'>Compte Suprimée</p>";
             }
             ?>
-            <p class="bottom-text">Déjà un compte ? <a class="inscription-href" href="Fonction-php&JS/connection.php">Connectez-vous</a></p>
+            <p class="bottom-text">Déjà un compte ? <a class="inscription-href" href="connection.php">Connectez-vous</a></p>
             
             
         </form>
     </div>
-    <footer><?php include('footer.php') ?></footer>
+    <footer><?php include('footer.php'); ?></footer>
 </body>
 
 </html>
-<?php //include('Fonction-php&JS/scroll.php') ?>
