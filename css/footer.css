@@ -1,0 +1,78 @@
+* {
+    user-select: none;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: "FF Mark W05",Arial,sans-serif;
+    color: #f9f9f9;
+}
+
+footer {
+    background-color: #111;
+    padding: 0px 0px 48px 0px;
+    border-top: 2px solid #343434;
+}
+
+.reseaux-sociaux {
+    padding: 18px 0;
+    user-select: none;
+    box-sizing: border-box;
+}
+
+.reseaux-sociaux .link-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-decoration: none;
+    cursor: pointer;
+    height: 100%;
+}
+
+.logo-footer{
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    padding: 24px 0px 20px;
+}
+
+.copyright {
+    font-family: "FF Mark W05",Arial,sans-serif;
+    margin: 0 auto;
+    max-width: 640px;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 140%;
+    text-align: center;
+    word-break: keep-all;
+    color: #7e7e7e;
+}
+
+.bouton-legal {
+    user-select: none;
+    box-sizing: border-box;
+    font-family: "FF Mark W05",Arial,sans-serif;
+    padding: 24px 0px 28px;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: .08em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.rating-logo {
+    user-select: none;
+    box-sizing: border-box;
+    font-weight: 500;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.rating-logo .logo-rating{
+    max-width: 100%;
+    padding: 8px 12px;
+    background: #292929;
+    border-radius: 8px;
+}
