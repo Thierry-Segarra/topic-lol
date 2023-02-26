@@ -24,10 +24,12 @@ body {
 .container-discussion {
     background-color: #1E1E1E;
     opacity: 95%;
-    width: 80%;
+    width: 81%;
     display: block;
     margin-left: auto;
     padding: 15px;
+    padding-right: 0;
+    padding-left: 0;
 }
 
 .container-discussion h1 {
@@ -42,7 +44,7 @@ body {
 
 .area-publication {
     font-family: 'Roboto', sans-serif;
-    color: #fff;
+    color: #333;
     font-size: 1.2rem;
     margin: 0 auto;
     padding: 1.5rem 2rem;
@@ -52,7 +54,6 @@ body {
     width: 85%;
     display: block;
     border-bottom: 1px solid;
-    border-bottom-color: #333;
     caret-color: white;
 }
 
@@ -147,13 +148,13 @@ body {
     width: fit-content;
 }
 
-.Logo-side{
+.Logo-side {
     display: block;
     margin: auto;
     width: fit-content;
 }
 
-.link-nav{
+.link-nav {
     display: block;
     width: fit-content;
     margin: auto;
@@ -189,6 +190,244 @@ body {
     width: 100%;
 }
 
-.nav-links:hover{
+.nav-links:hover {
     color: #f1f1f1;
+}
+
+.header-poste {
+    color: white;
+}
+
+.header-poste img {
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.header-poste:hover {
+    cursor: pointer;
+}
+
+.content-publication {
+    display: block;
+    padding-top: 20px;
+}
+
+.comment-publication {
+    display: block;
+    margin-top: 20px;
+    border-top: #333 solid 1px;
+    border-bottom: #333 solid 1px;
+    padding: 10px;
+}
+
+.reponse-publication {
+    display: block;
+}
+
+.row {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+.commentaire {
+    padding: 15px;
+    border-top: #333 solid 1px;
+    border-bottom: #333 solid 1px;
+}
+
+@media screen and (max-width: 1023px) {
+    .sidenav {
+        display: none;
+    }
+
+    .responsive-sidenav {
+        display: block;
+    }
+
+    .responsive-sidenav-open {
+        display: block;
+    }
+
+    .container-discussion {
+        width: 100%;
+    }
+
+    .container-discussion h1 {
+        text-align: center;
+    }
+
+    .header-poste {
+        width: fit-content;
+        margin: auto;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .sidenav {
+        display: block;
+    }
+
+    .responsive-sidenav {
+        display: none;
+    }
+
+    .responsive-sidenav-open {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .input-profil{
+        margin-top: 5px;
+    }
+}
+
+
+
+/* RESPONSIVE SIDE NAV */
+
+/* The side navigation menu */
+.responsive-sidenav {
+    height: 100%;
+    /* 100% Full-height */
+    width: 0;
+    /* 0 width - change this with JavaScript */
+    position: fixed;
+    /* Stay in place */
+    z-index: 2;
+    /* Stay on top */
+    top: 0;
+    /* Stay at the top */
+    left: 0;
+    background-color: #111;
+    /* Black*/
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    padding-top: 60px;
+    /* Place content 60px from the top */
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in the sidenav */
+}
+
+.responsive-sidenav .link-nav {
+    text-align: center;
+}
+
+/* The navigation menu links */
+.responsive-sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.responsive-sidenav a:hover {
+    color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.responsive-sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .responsive-sidenav {
+        padding-top: 15px;
+    }
+
+    .responsive-sidenav a {
+        font-size: 18px;
+    }
+}
+
+.responsive-sidenav-open {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    font-size: 3em;
+    margin-left: 15px;
+}
+
+.bandeau-profil {
+    background: url(../img/summonersrift.jpg);
+    background-size: cover;
+    height: 500px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-bandeau-profil {
+    color: black;
+    height: fit-content;
+    width: fit-content;
+    position: relative;
+    z-index: 1;
+}
+
+.photo-compte {
+    display: block;
+    width: fit-content;
+    margin: auto;
+}
+
+.header-compte {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.update-compte {
+    display: block;
+    width: fit-content;
+    margin: auto;
+    margin-top: 40px;
+}
+
+#infos-user {
+    display: none;
+}
+
+.delete-poste{
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+}
+
+#DeletePoste{
+    background-color: red;
+}
+
+.container-update-profil{
+    display: block;
+    margin: auto;
+    width: fit-content;
+    margin-top: 15px;
+}
+
+.container-input-profil{
+    display: block;
+    margin: auto;
+    text-align: center;
+    width: fit-content;
 }

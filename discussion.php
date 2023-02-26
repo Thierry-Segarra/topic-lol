@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/discussion.css">
-    <link rel="stylesheet" href="css/Style.css">
     <title>League Dump</title>
 </head>
 
@@ -38,10 +37,40 @@
                     }
                     else{
                         echo '<a class="nav-links" href="connection.php" name="page2">Connexion</a>';
+                        echo '<a class="nav-links" href="inscription.php" name="page2">Inscription</a>';
                     }
                     ?>
         </div>
     </div>
+
+    <!--SIDENAV RESPONSIVE -->
+    <div id="mySidenav" class="responsive-sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="link-nav">
+            <a class="nav-links" href="../Accueil.html">Accueil</a>
+            <?php
+                    if(isset($_SESSION['id_user'])){
+                    if($_SESSION['pseudo'] != ""){
+                        $nom = $_SESSION['pseudo'];
+                        if($_SESSION['role'] == "admin"){
+                            echo '<a   class="nav-links" href="support.php">Back-Office</a>';
+                        }
+                            echo '<a class="nav-links" href="profil.php" name="page3">'. $nom .'</a>';
+                            echo '<a class="nav-links" href="Fonction-php&JS/deconnection.php?dec=1" name="page2">Déconnexion</a>';
+                    }else{
+                        //header('Location: connection.php');
+                    }
+                    }
+                    else{
+                        echo '<a class="nav-links" href="connection.php" name="page2">Connexion</a>';
+                        echo '<a class="nav-links" href="inscription.php" name="page2">Inscription</a>';
+                    }
+                    ?>
+        </div>
+    </div>
+
+    <!-- Use any element to open the sidenav -->
+    <span class="responsive-sidenav-open" onclick="openNav()">☰</span>
 
     <!-- Page content -->
     <div class="main">
@@ -113,7 +142,7 @@
                 <?php
                 if(isset($_SESSION['role'])){
                     if($_SESSION['role'] == "admin"){
-                        echo "<a href='Fonction-php&JS/suprimer_topic.php?id=" . $row["id_topic"] . "' class='button'>suprimer topic</a>";
+                        echo "<br><a href='Fonction-php&JS/suprimer_topic.php?id=" . $row["id_topic"] . "' class='button'>suprimer topic</a>";
                     }
                 }
                 ?>
@@ -135,3 +164,15 @@
 </body>
 <?php include('Fonction-php&JS/scroll.php') ?>
 </html>
+
+<script>
+    /* Open the sidenav */
+function openNav() {
+  document.getElementById("mySidenav").style.width = "100%";
+}
+
+/* Close/hide the sidenav */
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>

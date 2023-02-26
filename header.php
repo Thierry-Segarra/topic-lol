@@ -2,6 +2,7 @@
             <a href="index.php" class="logo"><img src="img/Salière-Logo.png" height="125px" width="150px"></a>
             <div class="nav-links">
                 <ul>
+                    <li><a href="index.php" id="navlinks">Accueil</a><li>
                     <li><a href="discussion.php" name="page1" id="navlinks">Fil de discussion</a></li>
                 </ul>
                 <ul>

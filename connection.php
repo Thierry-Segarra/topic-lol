@@ -7,12 +7,12 @@
 
 <body>
     <!--<div class="cursor"></div> -->
-    <img class="fond" src="img/darkred.jpg"/>
-    <?php include("header2.php");?>
+    <img class="fond" src="img/background-LOL.jpg"/>
+    <?php include("header.php");?>
     <br>
     <div id="container-connexion">            
         <form action="Fonction-php&JS/verif.php" method="POST">
-            <h1>Connexion</h1>
+            <h1>Connectez-vous</h1>
             <br>
             <label class="form_label"><b>Nom d'utilisateur</b></label>
             <input type="text" class="form_input" placeholder="Entrer le nom d'utilisateur" name="username" required>
@@ -41,7 +41,7 @@
             
         </form>
     </div>
-    <footer><?php include('footer2.php'); ?></footer>
+    <footer><?php include('footer.php'); ?></footer>
 </body>
 
 </html>
