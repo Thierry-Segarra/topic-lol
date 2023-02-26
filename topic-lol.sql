@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Feb 18, 2023 at 04:15 PM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.11
+-- Hôte : 127.0.0.1
+-- Généré le : sam. 22 oct. 2022 à 09:46
+-- Version du serveur : 10.4.24-MariaDB
+-- Version de PHP : 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `topic-lol`
+-- Base de données : `topic-lol`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `commentaire`
+-- Structure de la table `commentaire`
 --
 
 CREATE TABLE `commentaire` (
@@ -36,53 +36,32 @@ CREATE TABLE `commentaire` (
   `id_topic` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `commentaire`
---
-
-INSERT INTO `commentaire` (`id_commentaire`, `date`, `contenue`, `pseudo_user`, `id_user`, `id_topic`) VALUES
-(12, '2022-10-22', 'e&quot;zstsetes', 'mast', 2, 3),
-(13, '2022-10-22', 'e&quot;zstsetes', 'mast', 2, 3),
-(14, '2022-10-22', 'test1', 'mast', 2, 2),
-(15, '2022-11-06', 'qsvqvsqvsqv', 'mast', 1, 1),
-(23, '2022-11-06', 'fdp', 'mast', 3, 14),
-(26, '2022-11-06', 'fqsfqsfqs', 'mast', 3, 16);
-
 -- --------------------------------------------------------
 
 --
--- Table structure for table `topic`
+-- Structure de la table `topic`
 --
 
 CREATE TABLE `topic` (
   `id_topic` int(11) NOT NULL,
   `titre` varchar(50) NOT NULL,
-  `message` varchar(10000) NOT NULL,
-  `id_user` int(11) NOT NULL,
-  `date_publication` datetime NOT NULL
+  `message` varchar(256) NOT NULL,
+  `id_user` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `topic`
+-- Déchargement des données de la table `topic`
 --
 
-INSERT INTO `topic` (`id_topic`, `titre`, `message`, `id_user`, `date_publication`) VALUES
-(4, 'sdgsdgsd', 'gsdgsdgdsgdsgsdg', 3, '2022-11-06 16:04:48'),
-(5, 'dhrhdrhrdhdrh', 'drhdrhdrdr', 3, '2022-11-06 16:11:57'),
-(6, 'drhdrhdrhdrhdrh', 'hdrhdrh', 3, '2022-11-06 16:12:00'),
-(7, 'hrdhdrhdr', 'drhrdhdr', 3, '2022-11-06 16:12:03'),
-(8, 'gdsgsdgsdg', 'sdgsdgsdgsdgsd', 3, '2022-11-06 16:12:08'),
-(9, 'qsfqsfqsf', 'qsfsqfqsfqsfsqf', 3, '2022-11-06 16:12:15'),
-(10, 'qsfqsqsfqsf', 'qsfsq', 3, '2022-11-06 16:12:17'),
-(11, 'qsqsqs', 'fqsfqsfqsf', 4, '2022-11-06 16:42:21'),
-(12, 'PD', 'PDPDPDPDPD', 4, '2022-11-06 16:42:29'),
-(16, 'sqsqfqs', 'fsqfqsfqsfsqf', 3, '2022-11-06 21:23:32'),
-(17, 'sqfqsfqs', 'fsfqsfqsfqsffq', 3, '2022-11-06 21:37:42');
+INSERT INTO `topic` (`id_topic`, `titre`, `message`, `id_user`) VALUES
+(1, 'thierry le bg', 'c&#039;est vrai il es vraiment bg', 1),
+(2, 'thierry le bg', 'merci', 0),
+(3, 'thierry le bg', ' c&#039;est vrai il es vraiment bg ', 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Structure de la table `user`
 --
 
 CREATE TABLE `user` (
@@ -92,61 +71,59 @@ CREATE TABLE `user` (
   `pseudo` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `mdp` varchar(100) NOT NULL,
-  `role` varchar(25) DEFAULT NULL,
-  `date_inscription` datetime NOT NULL
+  `role` varchar(25) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user`
+-- Déchargement des données de la table `user`
 --
 
-INSERT INTO `user` (`id_user`, `nom`, `prenom`, `pseudo`, `email`, `mdp`, `role`, `date_inscription`) VALUES
-(3, '', '', 'mast', '', '0900e541147919e8c782dd33de06d8c3', 'admin', '2022-11-06 16:03:40'),
-(4, '', '', 'erwan', '', '929615fb29de3208e05d4a978df7e857', NULL, '2022-11-06 17:43:06');
+INSERT INTO `user` (`id_user`, `nom`, `prenom`, `pseudo`, `email`, `mdp`, `role`) VALUES
+(1, '', '', 'erwan', '', '929615fb29de3208e05d4a978df7e857', NULL);
 
 --
--- Indexes for dumped tables
+-- Index pour les tables déchargées
 --
 
 --
--- Indexes for table `commentaire`
+-- Index pour la table `commentaire`
 --
 ALTER TABLE `commentaire`
   ADD PRIMARY KEY (`id_commentaire`);
 
 --
--- Indexes for table `topic`
+-- Index pour la table `topic`
 --
 ALTER TABLE `topic`
   ADD PRIMARY KEY (`id_topic`);
 
 --
--- Indexes for table `user`
+-- Index pour la table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
--- AUTO_INCREMENT for table `commentaire`
+-- AUTO_INCREMENT pour la table `commentaire`
 --
 ALTER TABLE `commentaire`
-  MODIFY `id_commentaire` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id_commentaire` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `topic`
+-- AUTO_INCREMENT pour la table `topic`
 --
 ALTER TABLE `topic`
-  MODIFY `id_topic` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_topic` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
