@@ -11,7 +11,7 @@
                     if($_SESSION['pseudo'] != ""){
                         $nom = $_SESSION['pseudo'];
                         if($_SESSION['role'] == "admin"){
-                            echo '<li><a href="support.php" id="navlinks">Back-Office</a></li>';
+                            echo '<li><a href="admin/Back-office-postes.php" id="navlinks">Back-Office</a></li>';
                         }
                             echo '<li><a href="profil.php" name="page3" id="navlinks">'. $nom .'</a></li>';
                             echo '<li><a href="Fonction-php&JS/deconnection.php?dec=1" name="page2" id="navlinks">Déconnexion</a></li>';

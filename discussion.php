@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/discussion.css">
+    <?php include('head.php') ?>
+
     <title>League Dump</title>
 </head>
 
@@ -27,7 +29,7 @@
                     if($_SESSION['pseudo'] != ""){
                         $nom = $_SESSION['pseudo'];
                         if($_SESSION['role'] == "admin"){
-                            echo '<a   class="nav-links" href="Back-office-users.php">Back-Office</a>';
+                            echo '<a   class="nav-links" href="admin/Back-office-users.php">Back-Office</a>';
                         }
                             echo '<a class="nav-links" href="profil.php" name="page3">'. $nom .'</a>';
                             echo '<a class="nav-links" href="Fonction-php&JS/deconnection.php?dec=1" name="page2">Déconnexion</a>';
@@ -53,7 +55,7 @@
                     if($_SESSION['pseudo'] != ""){
                         $nom = $_SESSION['pseudo'];
                         if($_SESSION['role'] == "admin"){
-                            echo '<a   class="nav-links" href="Back-office-users.php">Back-Office</a>';
+                            echo '<a   class="nav-links" href="admin/Back-office-users.php">Back-Office</a>';
                         }
                             echo '<a class="nav-links" href="profil.php" name="page3">'. $nom .'</a>';
                             echo '<a class="nav-links" href="Fonction-php&JS/deconnection.php?dec=1" name="page2">Déconnexion</a>';

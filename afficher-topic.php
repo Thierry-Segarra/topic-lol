@@ -25,7 +25,7 @@
                     if($_SESSION['pseudo'] != ""){
                         $nom = $_SESSION['pseudo'];
                         if($_SESSION['role'] == "admin"){
-                            echo '<a   class="nav-links" href="Back-office-users.php">Back-Office</a>';
+                            echo '<a   class="nav-links" href="admin/Back-office-users.php">Back-Office</a>';
                         }
                             echo '<a class="nav-links" href="profil.php" name="page3">'. $nom .'</a>';
                             echo '<a class="nav-links" href="Fonction-php&JS/deconnection.php?dec=1" name="page2">Déconnexion</a>';
@@ -51,7 +51,7 @@
                     if($_SESSION['pseudo'] != ""){
                         $nom = $_SESSION['pseudo'];
                         if($_SESSION['role'] == "admin"){
-                            echo '<a   class="nav-links" href="Back-office-users.php">Back-Office</a>';
+                            echo '<a   class="nav-links" href="admin/Back-office-users.php">Back-Office</a>';
                         }
                             echo '<a class="nav-links" href="profil.php" name="page3">'. $nom .'</a>';
                             echo '<a class="nav-links" href="Fonction-php&JS/deconnection.php?dec=1" name="page2">Déconnexion</a>';

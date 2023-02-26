@@ -3,6 +3,7 @@
 <head>
     <?php include('head.php') ?>
     <title>Accueil</title>
+    <link rel="stylesheet" href="css/Style.css">
 </head>
 
 <body>

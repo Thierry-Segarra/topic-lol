@@ -2,7 +2,10 @@
 <html lang="fr">
 <head>
     <?php include('head.php') ?>
-    <title>Accueil</title>
+    <title>League Dump</title>
+
+    <link rel="stylesheet" href="css/Style.css">
+
 </head>
 
 <body>
