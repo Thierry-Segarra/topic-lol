@@ -25,7 +25,7 @@ if(isset($_POST['verificationPassword']))
         }
 
 
-        $requete = "SELECT count(*),id_user FROM user where email = '".$_SESSION['email']."' and mot_de_passe = '".$pwd_peppered."'";
+        $requete = "SELECT count(*),id_user FROM user where email = '".$_SESSION['email']."' and mdp = '".$pwd_peppered."'";
         $exec_requete = mysqli_query($db,$requete);
         $reponse      = mysqli_fetch_array($exec_requete);
         $count = $reponse['count(*)'];
@@ -45,7 +45,7 @@ if(isset($_POST['verificationPassword']))
                     $requete3 = 'UPDATE `user` SET `email`="'.$email.'" '.$requete.' WHERE id = "'.$reponse['id_user'].'"';
                     $requete3 = mysqli_query($db,$requete3) or die("Foobar");// doit normalement executer la requete SQL
                     if($requete3){
-                        $_SESSION['username'] = $username;
+                        $_SESSION['pseudo'] = $username;
                         header('Location: ../parametre_compte.php?erreur=4');
                     }
                     else

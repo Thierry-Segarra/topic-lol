@@ -7,7 +7,7 @@
     </head>
     <body>
         <div id="container">    
-             <button><a href="accueil.php">retour</a></button>
+             <button><a href="index.php">retour</a></button>
             <form action="Fonction_PHP&JS/parametre-compte-form.php" method="POST">
             <h1>Paramètre compte</h1>   
             <h3>Changer information personnel</h3>
