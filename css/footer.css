@@ -1,7 +1,17 @@
-footer {
+.bas {
     background-color: #111;
     padding: 0px 0px 48px 0px;
     border-top: 2px solid #343434;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: "FF Mark W05",Arial,sans-serif;
+    color: #f9f9f9;
+}
+
+.bas2 {
+    background: transparent;
+    background-color: transparent;
+    padding: 0px 0px 48px 0px;
     box-sizing: border-box;
     text-align: center;
     font-family: "FF Mark W05",Arial,sans-serif;
@@ -83,6 +93,33 @@ footer {
 
 .bouton-legal ul li a {
     color: white;
+}
+
+.bouton-legal2 {
+    user-select: none;
+    box-sizing: border-box;
+    font-family: "FF Mark W05",Arial,sans-serif;
+    padding: 24px 0px 28px;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: .08em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.bouton-legal2 ul {
+    
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.bouton-legal2 ul li {
+    padding: 13px;
+}
+
+.bouton-legal2 ul li a {
+    color: #7e7e7e;
 }
 
 .rating-logo {
