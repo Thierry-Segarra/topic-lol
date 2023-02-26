@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="css/footer.css">
 
-<div class="footer">
+<div class="bas">
     <div class ="reseaux-sociaux">
         <ul class="ligne">
             <li><a class="link-social" href=""><img src="img/ytb.png"></a></li>
