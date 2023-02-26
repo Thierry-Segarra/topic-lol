@@ -5,6 +5,44 @@
     font-family: 'Poppins', sans-serif;
 }
 
+.navbar{
+    display: flex;
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center;
+    transition: 0.4s;
+    z-index: 99;
+    background-color: #111;
+}
+.navbar a{
+    color: white;
+}
+
+.navbar .logo{
+    font-size: 2em; 
+}
+
+.navbar .nav-links {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.navbar .nav-links ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar .nav-links ul li{
+    margin: 0 25px;
+}
+
+.navbar .nav-links ul li.active a{
+    color: crimson;
+    font-weight: 600;
+}
+
 .bandeau-accueil {
     background: url(../img/bandeau_gif.gif);
     background-size: cover;
