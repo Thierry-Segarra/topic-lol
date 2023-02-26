@@ -335,7 +335,7 @@ body{
 }
 
 .form_input:hover{
-    border-bottom: 0.3rem solid goldenrod;
+    border-bottom: 0.3rem solid rgb(93, 1, 1);
     transition: all 0.3s;
 }
 
